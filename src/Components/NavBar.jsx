@@ -9,7 +9,7 @@ const NavBar = () => {
     const navLinks =
         <>
             <li> <NavLink to={'/'}>Home</NavLink></li>
-            {user ? '' : <li><NavLink to={'/log-in'}>Login</NavLink></li>}
+            {user ? '' : <li><NavLink to={'/login'}>Login</NavLink></li>}
 
 
         </>
@@ -44,7 +44,7 @@ const handleLogOut = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to={'/'}><img src="https://i.ibb.co/x6FVJQK/Green-Tones-Catering-Logo-1.png " className="w-32"/></Link>
+                <Link to={'/'}><h1 className="text-2xl">MindfulGurukul</h1></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
