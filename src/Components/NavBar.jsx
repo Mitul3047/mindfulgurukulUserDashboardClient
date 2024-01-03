@@ -36,7 +36,7 @@ const handleLogOut = () => {
         document.querySelector("html").setAttribute("data-theme", localTheme)
     }, [theme])
     return (
-        <div className="navbar  py-3">
+        <div className="navbar bg-[#034078] text-white  py-3">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

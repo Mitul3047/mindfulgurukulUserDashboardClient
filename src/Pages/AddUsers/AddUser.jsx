@@ -1,46 +1,35 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
-import { AuthContext } from "../../Providers/Authprovider";
+
 import axios from "axios";
 
-const SignUp = () => {
+const AddUser = () => {
     const [error, setError] = useState(null);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
+  
     const navigate = useNavigate();
 
     const onSubmit = data => {
-        // eslint-disable-next-line no-unused-vars
-        const { password, ...formData } = data; // Destructure the password and create a new object without it
-        console.log(formData);
+     
+      console.log(data);
 
-        createUser(data.email, data.password)
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-                updateUserProfile(formData.name, formData.photoURL, formData.number, formData.gender, formData.hearAbout, formData.city, formData.state)
-                    .then(() => {
-                        console.log('user profile info updated')
-                        reset();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'User created successfully.',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        logOut();
-                        navigate('/login');
-                    })
-                    .catch(error => console.log(error))
-            })
-        axios.post('http://localhost:3000/users', formData) // Use formData instead of data for the Axios request
+
+        axios.post('http://localhost:3000/users', data) // Use formData instead of data for the Axios request
             .then(response => {
                 // Handle successful response
                 console.log('User created:', response.data);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 // Additional actions or handling after successful POST request
+               reset();
+                navigate('/allusers');
             })
             .catch(err => {
                 // Handle errors
@@ -161,31 +150,10 @@ const SignUp = () => {
                                 </datalist>
                                 {errors.state && <span className="text-red-600">State is required</span>}
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input
-                                    type="password"
-                                    {...register("password", {
-                                        required: true,
-                                        minLength: 6,
-                                        maxLength: 20,
-                                        pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                    })}
-                                    placeholder="Password"
-                                    className="input input-bordered"
-                                />
-                                {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
-                                {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
-                                {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
-                                {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have at least one uppercase, one lowercase, one number, and one special character</p>}
-                            
-                            </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
                             </div>
-                            <p><small>Already have an account? <Link to="/login">Login</Link></small></p>
+                            
                         </form>
                     </div>
                 </div>
@@ -194,4 +162,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default AddUser;
