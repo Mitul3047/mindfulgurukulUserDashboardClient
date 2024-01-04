@@ -79,22 +79,24 @@ const AllUsers = () => {
 
     return (
         <div>
-            <div>
+          <div className="space-y-4">
+          <div  className="max-w-5xl w-full mx-auto ">
                 {/* Search input for filtering users */}
                 <input
                     type="text"
                     placeholder="Search by name, email, or phone number"
                     value={searchQuery}
                     onChange={handleSearch}
-                    className="border border-gray-300 px-2 py-1 rounded-md"
+                    className="max-w-5xl w-full mx-auto border  input input-bordered input-info  px-2 py-1 rounded-md"
                 />
             </div>
-            <div>
+            <div className="flex justify-end items-end w-[88%]">
                 {/* Button to toggle sorting order */}
-                <button onClick={handleSortOrderChange}>
+                <button className="btn btn-primary rounded-sm" onClick={handleSortOrderChange}>
                     {sortOrder === "asc" ? "A-Z" : "Z-A"}
                 </button>
             </div>
+          </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-4/5 mx-auto py-10">
                 {loading ? (
                     <div className="h-[60vh] col-span-3 flex justify-center items-center border-emerald-600">
