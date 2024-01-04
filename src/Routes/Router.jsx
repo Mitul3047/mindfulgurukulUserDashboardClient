@@ -8,6 +8,7 @@ import SignUp from "../Pages/Login/Signup";
 import AllUsers from "../Pages/AllUsers/AllUsers";
 import UserDetails from "../Pages/UserDetails/UserDetails";
 import AddUser from "../Pages/AddUsers/AddUser";
+import UpdateUser from "../Pages/UpdateUser/UpdateUser";
 
 
 export const router = createBrowserRouter([
@@ -39,6 +40,11 @@ export const router = createBrowserRouter([
             {
                 path: '/adduser',
                 element:<AddUser></AddUser>
+            },
+            {
+                path: '/updateuser/:id',
+                element:<UpdateUser></UpdateUser>,
+                
             }
         ]
     }

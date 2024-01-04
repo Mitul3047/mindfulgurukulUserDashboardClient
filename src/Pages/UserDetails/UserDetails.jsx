@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import loadingGif from "../../assets/Loading.gif"
@@ -50,7 +50,9 @@ const UserDetails = () => {
                             : user.hearAbout}
                     </p>
                     <p><span className="font-semibold">Location:</span> {user.city}, {user.state}</p>
-                                <div className="flex justify-end "><button className="btn  text-white hover:text-black bg-[#034078] rounded-md">Update info</button></div>
+                                <div className="flex justify-end ">
+                                    <Link to={`/updateuser/${user._id}`}><button className="btn  text-white hover:text-black bg-[#034078] rounded-md">Update info</button></Link>
+                                </div>
                 </div>
             </div>
         </div>
