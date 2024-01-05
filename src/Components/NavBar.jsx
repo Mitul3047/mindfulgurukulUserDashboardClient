@@ -62,8 +62,8 @@ const handleLogOut = () => {
                         <img src={user.photoURL? user.photoURL : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1364&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }/>
                       </div>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                      <li>
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-md w-52">
+                      <li className="text-black">
                         <a >
                           {user.displayName ? user.displayName : 'No Name Found'}
                             <span className="badge badge-warning ">{user.photoURL? '' : 'No Image'}</span>
@@ -71,7 +71,7 @@ const handleLogOut = () => {
                         </a>
                       </li>
                       {/* <li><a>Settings</a></li> */}
-                      <li onClick={handleLogOut}><a>Logout</a></li>
+                      <li onClick={handleLogOut} className="text-black"><a>Logout</a></li>
                     </ul>
                   </div>
                   

@@ -79,8 +79,8 @@ const AllUsers = () => {
 
     return (
         <div>
-          <div className="space-y-4">
-          <div  className="max-w-5xl w-full mx-auto ">
+          <div className="space-y-4 mt-10">
+          <div  className="max-w-5xl  w-full mx-auto ">
                 {/* Search input for filtering users */}
                 <input
                     type="text"

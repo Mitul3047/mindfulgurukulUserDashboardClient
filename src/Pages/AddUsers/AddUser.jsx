@@ -47,6 +47,7 @@ const AddUser = () => {
 
                     <div className="card rounded-md w-full  shadow-2xl bg-base-100">
                         <p className="text-red-600">{error}</p>
+                        <h1 className='text-3xl text-center pt-5'>Add User</h1>
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -151,7 +152,7 @@ const AddUser = () => {
                                 {errors.state && <span className="text-red-600">State is required</span>}
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Sign Up" />
+                                <input className="btn btn-primary" type="submit" value="Add User" />
                             </div>
                             
                         </form>

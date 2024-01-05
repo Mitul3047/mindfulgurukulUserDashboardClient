@@ -74,6 +74,7 @@ const UpdateUser = () => {
 
   return (
     <form onSubmit={handleUpdateUser} className="flex flex-col space-y-4 max-w-4xl mx-auto my-[120px]">
+      <h1 className='text-3xl text-center pt-5'>Update Info</h1>
       <label>
         Name
       <input className="input input-bordered w-full" type="text" name="name" defaultValue={users?.name || ''} />

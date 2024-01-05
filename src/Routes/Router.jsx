@@ -9,6 +9,7 @@ import AllUsers from "../Pages/AllUsers/AllUsers";
 import UserDetails from "../Pages/UserDetails/UserDetails";
 import AddUser from "../Pages/AddUsers/AddUser";
 import UpdateUser from "../Pages/UpdateUser/UpdateUser";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -31,19 +32,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/allusers',
-                element:<AllUsers></AllUsers>
+                element:<PrivateRoute><AllUsers></AllUsers></PrivateRoute>
             },
             {
                 path: '/allusers/:id',
-                element:<UserDetails></UserDetails>
+                element:<PrivateRoute><UserDetails></UserDetails></PrivateRoute>
             },
             {
                 path: '/adduser',
-                element:<AddUser></AddUser>
+                element:<PrivateRoute><AddUser></AddUser></PrivateRoute>
             },
             {
                 path: '/updateuser/:id',
-                element:<UpdateUser></UpdateUser>,
+                element:<PrivateRoute><UpdateUser></UpdateUser></PrivateRoute>,
                 
             }
         ]

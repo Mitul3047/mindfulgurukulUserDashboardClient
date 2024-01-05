@@ -58,6 +58,7 @@ const SignUp = () => {
 
                     <div className="card rounded-md w-full  shadow-2xl bg-base-100">
                         <p className="text-red-600">{error}</p>
+                        <h1 className='text-3xl text-center pt-5'>SignUp</h1>
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
