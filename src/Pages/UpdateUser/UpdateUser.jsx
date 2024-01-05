@@ -10,7 +10,7 @@ const UpdateUser = () => {
       queryKey: ['users'],
       queryFn: async () => {
         try {
-          const res = await axios.get(`http://localhost:3000/users/${id}`);
+          const res = await axios.get(`https://mindgulusertaskapi.vercel.app/users/${id}`);
           return res.data;
         } catch (error) {
           console.error("Error fetching users:", error);
@@ -41,7 +41,7 @@ const UpdateUser = () => {
         };
     
         try {
-          const response = await axios.patch(`http://localhost:3000/users/${users?._id}`, updatedUser, {
+          const response = await axios.patch(`https://mindgulusertaskapi.vercel.app/users/${users?._id}`, updatedUser, {
             headers: {
               'Content-Type': 'application/json'
             }

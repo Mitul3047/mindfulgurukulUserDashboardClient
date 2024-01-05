@@ -16,7 +16,7 @@ const AllUsersCard = ({ user, refetch }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/users/${user._id}`)
+        axios.delete(`https://mindgulusertaskapi.vercel.app/users/${user._id}`)
           .then(res => {
             if (res.data.deletedCount > 0) {
               refetch();

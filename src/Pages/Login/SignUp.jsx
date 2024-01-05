@@ -36,7 +36,7 @@ const SignUp = () => {
                     })
                     .catch(error => console.log(error))
             })
-        axios.post('http://localhost:3000/users', formData) // Use formData instead of data for the Axios request
+        axios.post('https://mindgulusertaskapi.vercel.app/users', formData) // Use formData instead of data for the Axios request
             .then(response => {
                 // Handle successful response
                 console.log('User created:', response.data);

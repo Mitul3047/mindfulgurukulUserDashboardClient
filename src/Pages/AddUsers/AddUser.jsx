@@ -16,7 +16,7 @@ const AddUser = () => {
       console.log(data);
 
 
-        axios.post('http://localhost:3000/users', data) // Use formData instead of data for the Axios request
+        axios.post('https://mindgulusertaskapi.vercel.app/users', data) // Use formData instead of data for the Axios request
             .then(response => {
                 // Handle successful response
                 console.log('User created:', response.data);

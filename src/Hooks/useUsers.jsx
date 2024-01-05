@@ -7,7 +7,7 @@ const useUser = () => {
         queryKey: ['users'],
         queryFn: async () => {
             try {
-                const res = await axios.get('http://localhost:3000/users'); // Use the localhost API endpoint
+                const res = await axios.get('https://mindgulusertaskapi.vercel.app/users'); // Use the localhost API endpoint
                 return res.data;
             } catch (error) {
                 console.error("Error fetching users:", error);

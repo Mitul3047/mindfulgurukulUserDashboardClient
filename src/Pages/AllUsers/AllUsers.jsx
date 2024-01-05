@@ -75,9 +75,10 @@ const AllUsers = () => {
     // Update sorting when localUsers or sortOrder changes
     useEffect(() => {
         sortUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [localUsers, sortOrder]);
 
-    return (
+    return ( 
         <div>
           <div className="space-y-4 mt-10">
           <div  className="max-w-5xl  w-full mx-auto ">

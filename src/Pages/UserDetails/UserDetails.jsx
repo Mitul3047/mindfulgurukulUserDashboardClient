@@ -9,7 +9,7 @@ const UserDetails = () => {
         queryKey: ['users'],
         queryFn: async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/users/${id}`);
+                const res = await axios.get(`https://mindgulusertaskapi.vercel.app/users/${id}`);
                 return res.data;
             } catch (error) {
                 console.error("Error fetching user:", error);
