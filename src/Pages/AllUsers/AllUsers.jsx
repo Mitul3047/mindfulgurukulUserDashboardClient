@@ -105,7 +105,7 @@ const AllUsers = () => {
                     </div>
                 ) : localUsers && localUsers.length > 0 ? (
                     localUsers.map((user) => (
-                        <AllUsersCard key={user._id} refetch={refetch} user={user} />
+                        <AllUsersCard key={user._id} refetch={refetch} loading={loading} user={user} />
                     ))
                 ) : (
                     <p>No users found.</p>
